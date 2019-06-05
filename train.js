@@ -1,15 +1,17 @@
 
 
-var config = {
+
+var firebaseConfig = {
   apiKey: "AIzaSyAd3Dr8nMjMVhmq7rjAzU6kkyLZGIPyrLY",
   authDomain: "train-14cef.firebaseapp.com",
   databaseURL: "https://train-14cef.firebaseio.com",
   projectId: "train-14cef",
-  storageBucket: "",
+  storageBucket: "train-14cef.appspot.com",
+  messagingSenderId: "73651022427",
+  appId: "1:73651022427:web:4fa96085535ad9ac"
 };
-//intitalize firebase
-  firebase.initializeApp(config);
-
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 //reference to database
 var database = firebase.database();
 
@@ -20,7 +22,7 @@ var database = firebase.database();
 //var frequency = 0;
 
 //button for train
-$("#add-train").on("click", function(event){
+$("#add-train-btn").on("click", function(event){
   event.preventDefault();
 
 //grab user input
@@ -36,6 +38,7 @@ var newTrain = {
   time: time,
   frequency: frequency
 };
+
 //data uploads to database
 database.ref().push(newTrain);
 
