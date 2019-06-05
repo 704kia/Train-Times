@@ -12,14 +12,16 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
 //reference to database
 var database = firebase.database();
 
+
 //variables for trains
-//var trainName = "";
-//var destination = "";
-//var time = 0;
-//var frequency = 0;
+var trainName = "";
+var destination = "";
+var time = 0;
+var frequency = 0;
 
 //button for train
 $("#add-train-btn").on("click", function(event){
@@ -77,5 +79,5 @@ $("<td>").text(frequency)
 )
 
 //append row to table
-$("#schedule table > tbody").append(newRow);
+$("#schedule-table > tbody").append(newRow);
 });
